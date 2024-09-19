@@ -1,0 +1,13 @@
+---
+title: "Homework 1"
+author: "Mia Isaacs"
+date: "2024-09-19"
+output: html_document
+---
+
+# load dataset
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
