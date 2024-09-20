@@ -2,12 +2,17 @@
 title: "Homework 1"
 author: "Mia Isaacs"
 date: "2024-09-19"
-output: html_document
+output: github_document
 ---
 
-# load dataset
+# load library and dataset
 
 ```{r}
+library(tidyverse)
+
 data("penguins", package = "palmerpenguins")
 ```
+
+# describe dataset
+
 
