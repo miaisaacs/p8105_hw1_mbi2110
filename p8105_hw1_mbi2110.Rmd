@@ -15,4 +15,33 @@ data("penguins", package = "palmerpenguins")
 
 # describe dataset
 
+```{r}
+variable_names <- colnames(penguins)
+print(variable_names)
+
+nrow(penguins)
+ncol(penguins)
+```
+# find mean flipper length
+
+```{r}
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+
+# scatter plot of flipper length vs. bill length
+
+```{r}
+scatterplot <- ggplot(penguins, aes(
+  x = bill_length_mm, 
+  y = flipper_length_mm,
+  color = species)) +
+  geom_point()
+
+ggsave("bill_vs_flipper.png", scatterplot)
+```
+
+
+
+
+
 
