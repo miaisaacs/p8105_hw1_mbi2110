@@ -46,13 +46,36 @@ ggsave("bill_vs_flipper.png", scatterplot)
 ```{r}
 data_frame = tibble(
   random_sample = rnorm(10),
-  logical_vector = rnorm(10) > 0,
-  character_vector = sample(LETTERS, 10),
-  factor_vector = factor(sample(c("A", "B", "C"), 10, replace = TRUE))
+  log_vec = rnorm(10) > 0,
+  char_vec = sample(LETTERS, 10),
+  fac_vec = factor(sample(c("A", "B", "C"), 10, replace = TRUE))
 )
 
 view(data_frame)
 ```
+
+# take mean of each variable
+
+```{r}
+mean_random_sample <- data_frame %>% pull(random_sample) %>% mean()
+
+mean_log_vec <- data_frame %>% pull(log_vec) %>% mean()
+
+mean_char_vec <- data_frame %>% pull(char_vec) %>% mean()
+
+mean_fac_vec <- data_frame %>% pull(fac_vec) %>% mean()
+```
+
+# convert to numeric variables
+
+```{r}
+numeric_log_vec <- data_frame %>% pull(log_vec) %>% as.numeric()
+
+numeric_char_vec <- data_frame %>% pull(char_vec) %>% as.numeric()
+
+numeric_fac_vec <- data_frame %>% pull(fac_vec) %>% as.numeric()
+```
+
 
 
 
